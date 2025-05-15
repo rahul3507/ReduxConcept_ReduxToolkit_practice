@@ -1,6 +1,7 @@
-import { useState } from 'react'
+
 
 import './App.css'
+import Counter from './components/Counter'
 
 function App() {
   
@@ -12,10 +13,10 @@ function App() {
       </h1>
 
       <div className="max-w-md mx-auto mt-10 space-y-5">
-
+        <Counter/>
       </div>
     </div>
   )
 }
-e
+
 export default App
