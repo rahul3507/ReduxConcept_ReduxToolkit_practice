@@ -45,6 +45,10 @@ function App() {
         setCounters(updatedCounters);
     }
 
+    const totalCount = counters.reduce(
+      (sum, currentValue)=> sum+currentValue.value,0
+    )
+
   return (
     <div className='w-screen h-screen p-10 bg-gray-100 text-slate-700'>
       <h1 className='max-w-md mx-auto text-2xl text-center font-bold'>
@@ -61,7 +65,7 @@ function App() {
                     onDecrement={()=>handleDecrement(counter.id)} />
           ))
         }
-        <Stats totalCount={10}/>
+        <Stats totalCount={totalCount}/>
       </div>
     </div>
   )
