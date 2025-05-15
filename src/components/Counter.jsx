@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+
 import Button from '../components/Button'
 import Count from './Count';
 
-export default function Counter({count}) {
+export default function Counter({count,onIncrement, onDecrement}) {
   
 
  
@@ -10,9 +10,9 @@ export default function Counter({count}) {
     <div className='p-4 h-auto flex flex-col items-center justify-center space-y-5 bg-white rounded shadow'>
         <Count count={count}/>
         <div className="flex space-x-3">
-            <Button handler={handleIncrement}>Increment</Button>
+            <Button handler={onIncrement}>Increment</Button>
             
-            <Button type="denger" handler={handleDecrement}>Decrement</Button>
+            <Button type="denger" handler={onDecrement}>Decrement</Button>
             
         </div>
         
