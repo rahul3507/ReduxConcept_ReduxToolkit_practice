@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import { getPosts } from "./postsApi"
 
 const initialState={
-    isLeading : false,
+    isLoading : false,
     isError: false,
     posts: [],
     error: null
@@ -19,11 +19,16 @@ export const postsSlice = createSlice({
     extraReducers: (builder)=> {
         builder.addCase(fetchPosts.pending, (state)=>{
             state.isError = false;
-            state.isLeading=true;
+            state.isLoading=true;
         });
         builder.addCase(fetchPosts.fulfilled, (state, action)=>{
-            state.isLeading=false;
+            state.isLoading=false;
             state.posts = action.payload
+        });
+        builder.addCase(fetchPosts.rejected, ( state, action)=>{
+            state.isLoading = false;
+            state.isError=true;
+            state.error= action.error?.message;
         })
 
     }
