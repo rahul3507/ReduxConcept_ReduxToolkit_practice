@@ -8,12 +8,12 @@ const initialState={
     error: null
 }  
 //async thunk
-const fetchPosts = createAsyncThunk('posts/fetchPosts', async ()=>{
+export const fetchPosts = createAsyncThunk('posts/fetchPosts', async ()=>{
     const posts = await getPosts();
     return posts;
 })
 
-export const postsSlice = createSlice({
+const postsSlice = createSlice({
     name: 'posts',
     initialState,
     extraReducers: (builder)=> {
@@ -34,3 +34,5 @@ export const postsSlice = createSlice({
 
     }
 })
+
+export default postsSlice.reducer;
