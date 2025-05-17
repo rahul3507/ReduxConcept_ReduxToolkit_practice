@@ -10,6 +10,7 @@ const initialState={
 //async thunk
 export const fetchPosts = createAsyncThunk('posts/fetchPosts', async ()=>{
     const posts = await getPosts();
+    console.log(posts);
     return posts;
 })
 

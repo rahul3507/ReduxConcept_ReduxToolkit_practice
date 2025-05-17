@@ -4,7 +4,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 
 export default function Posts() {
-    const {posts, isLoading, isError, error} = useSelector(state=> state.Posts)
+    const {posts, isLoading, isError, error} = useSelector(state=> state.posts)
     let content;
     if(isLoading){
         content= <h1>Loading posts...</h1>
