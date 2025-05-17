@@ -10,8 +10,8 @@ export default function Posts() {
     const dispatch = useDispatch();
 
     useEffect(()=>{
-        dispatch(fetchPosts)
-    },[dispatch])
+        dispatch(fetchPosts())
+    },[dispatch]);
 
 
     let content;
