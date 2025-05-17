@@ -20,6 +20,11 @@ export const postsSlice = createSlice({
         builder.addCase(fetchPosts.pending, (state)=>{
             state.isError = false;
             state.isLeading=true;
+        });
+        builder.addCase(fetchPosts.fulfilled, (state, action)=>{
+            state.isLeading=false;
+            state.posts = action.payload
         })
+
     }
 })
