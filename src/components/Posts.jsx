@@ -23,12 +23,12 @@ export default function Posts() {
     }
     if(!isLoading && !isError){
         if(posts.length >0){
-            content = <ul>
-            {posts.map(posts => (
-                    <li key={(posts).id}>{posts.title}</li>
-                    ))
-                }
-        </ul>
+            content =   <ul>
+                            {posts.map(posts => (
+                                    <li key={(posts).id}>{posts.title}</li>
+                                    ))
+                                }
+                        </ul>
         }
         else{
             content= <h1>No posts found.</h1>
